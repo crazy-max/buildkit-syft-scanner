@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-# Copyright 2022 buildkit-syft-scanner authors
+# Copyright 2026 buildkit-syft-scanner authors
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,9 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM ubuntu as base
+FROM alpine AS base
 ARG BUILDKIT_SBOM_SCAN_STAGE=true
-RUN apt-get update && apt-get install -y git
+RUN apk add git
 COPY <<EOF /empty
 EOF
 
